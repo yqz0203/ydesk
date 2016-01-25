@@ -1,5 +1,5 @@
 body {
-  font: 14px "微软雅黑";
+  font: 14px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif;
   margin: 0 auto;
   padding: 0;
   color: #000;
@@ -81,4 +81,20 @@ input {
   background-color: rgba(255, 255, 255, 0.30);
   z-index: -1;
   display: none;
+}
+
+
+.no-select {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.no-transition {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
 }

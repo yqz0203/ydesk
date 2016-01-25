@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  font: 14px "微软雅黑";
+  font: 14px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif;
   margin: 0 auto;
   padding: 0;
   color: #000;
@@ -65,6 +65,19 @@ input {
   background-color: rgba(255, 255, 255, 0.3);
   z-index: -1;
   display: none; }
+
+.no-select {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.no-transition {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none; }
 
 @-webkit-keyframes window-scale {
   0% {
@@ -157,7 +170,6 @@ input {
     line-height: 30px;
     background-color: #dce1e2;
     cursor: move;
-    font-family: "微软雅黑";
     padding-left: 10px;
     border: solid 1px #cccccc;
     border-bottom: 0; }
@@ -187,19 +199,8 @@ input {
     -ms-transition: top 200ms;
     -o-transition: top 200ms;
     transition: top 200ms; }
-  .window .no-select {
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: 'none'; }
-  .window .no-transition {
-    -webkit-transition: none;
-    -moz-transition: none;
-    -ms-transition: none;
-    -o-transition: none;
-    transition: none; }
   .window .win-scrollbar {
-    top: 0px;
+    top: 0;
     height: 30px;
     position: absolute;
     width: 5px;
@@ -215,8 +216,8 @@ input {
     position: absolute;
     height: 15px;
     width: 15px;
-    bottom: 0px;
-    right: 0px;
+    bottom: 0;
+    right: 0;
     opacity: 0;
     cursor: se-resize; }
   .window .win-scrollbar-selected {
@@ -262,7 +263,6 @@ input {
     position: absolute;
     color: #ffffff;
     display: block;
-    font-family: "微软雅黑";
     font-size: 14px;
     max-height: 120px;
     -webkit-transition: all 500ms;
@@ -306,7 +306,6 @@ input {
   float: left;
   color: #333333;
   display: block;
-  font-family: "微软雅黑";
   font-size: 14px;
   max-height: 120px;
   -webkit-transition: all 500ms;

@@ -19,7 +19,6 @@
     line-height: 30px;
     background-color: #dce1e2;
     cursor: move;
-    font-family: "微软雅黑";
     padding-left: 10px;
     border: solid 1px #cccccc;
     border-bottom: 0;
@@ -63,23 +62,8 @@
     transition: top 200ms;
   }
 
-  .no-select {
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: 'none';
-  }
-
-  .no-transition {
-    -webkit-transition: none;
-    -moz-transition: none;
-    -ms-transition: none;
-    -o-transition: none;
-    transition: none;
-  }
-
   .win-scrollbar {
-    top: 0px;
+    top: 0;
     height: 30px;
     position: absolute;
     width: 5px;
@@ -97,8 +81,8 @@
     position: absolute;
     height: 15px;
     width: 15px;
-    bottom: 0px;
-    right: 0px;
+    bottom: 0;
+    right: 0;
     opacity: 0;
     cursor: se-resize;
   }
