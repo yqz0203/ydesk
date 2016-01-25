@@ -1,5 +1,8 @@
 # ydesk
-a web user interface simulating windows desktop
+a web user interface simulating windows desktop(my english is quite bad)
+
+#basic
+run /build/main.html to show the effect
 
 # now
 it's just a demo, welcome to get me suggestions and exchange of learning。
