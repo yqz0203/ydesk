@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/css.css"/>
+    <style>
+        body {
+            height: 1000px;
+        }
+
+        p {
+            margin: 0;
+            margin-bottom: 155px;;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        #nav {
+            width: 500px;
+            margin: auto;
+            height: 30px;
+            background-color: #dd7d55;
+            color: white;
+            line-height: 30px;
+            overflow: visible;
+        }
+
+        #nav > li {
+            float: left;
+            width: 100px;
+            display: block;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #nav > li > ul {
+            position: absolute;
+            left: 0px;
+            top: 30px;
+            width: inherit;
+            z-index: 99;
+            background-color: #b5dd1d;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<img width="100%" src="image/calculator.png">
+<ul id="nav" style="">
+    <li>menu1
+        <ul>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+        </ul>
+    </li>
+    <li>menu2
+        <ul>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+        </ul>
+    </li>
+    <li>menu3
+        <ul>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+        </ul>
+    </li>
+    <li>menu4
+        <ul>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+        </ul>
+    </li>
+    <li>menu5
+        <ul>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+            <li>children1</li>
+        </ul>
+    </li>
+</ul>
+<iframe></iframe>
+<script src="js/yWindow.js"></script>
+<script>
+    $('#nav').children('li').on('mouseenter', function () {
+        $(this).children('ul').show();
+    });
+    $('#nav').find('li').on('mouseleave', function () {
+        $(this).children('ul').hide();
+    });
+    var win = new yWindow({title: '我的电脑'}).init();
+    win.contentBody.append($('#nav'));
+//    win.contentBody.append('<div style="height: 10000px; background-color: #0391cc"></div>');
+    win.scrollRefresh();
+    //    win.scrollTo(10000);
+</script>
+</body>
+</html>

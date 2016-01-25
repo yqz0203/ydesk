@@ -1,0 +1,146 @@
+
+.desk {
+  position: absolute;
+  top: 0px;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  .icon {
+    min-height: 90px;
+    width: 90px;
+    text-align: center;
+    margin: 5px;
+    position: absolute;
+    color: #ffffff;
+    display: block;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    max-height: 120px;
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+    transition: all 500ms;
+
+    > img {
+      height: 50px;
+      width: 50px;
+      border-radius: 2px;
+      border: none;
+      margin-top: 5px;
+    }
+
+    > span {
+      text-align: center;
+      display: block;
+      text-shadow: 2px 2px 2px #161616;
+      width: 80px;
+      margin: auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      margin-top: 6px;
+      max-height: 60px;
+      cursor: default;
+    }
+
+    &:hover .hover-border {
+      display: block;
+    }
+
+    &:focus .hover-border {
+      display: block;
+      border: 1px solid rgba(181, 211, 180, 0.80);
+      /*ie8*/
+      background-color: rgb(163, 163, 163);
+      background-color: rgba(255, 255, 255, 0.60);
+    }
+  }
+}
+
+.folder-icon {
+  min-height: 90px;
+  width: 90px;
+  text-align: center;
+  margin: 5px;
+  position: relative;
+  float: left;
+  color: #333333;
+  display: block;
+  font-family: "微软雅黑";
+  font-size: 14px;
+  max-height: 120px;
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+  -ms-transition: all 500ms;
+  -o-transition: all 500ms;
+  transition: all 500ms;
+
+  > img {
+    height: 50px;
+    width: 50px;
+    border-radius: 2px;
+    border: none;
+    margin-top: 5px;
+  }
+
+  > span {
+    text-align: center;
+    display: block;
+    text-shadow: 0px 0px 1px #b6b6b6;
+    width: 80px;
+    margin: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    margin-top: 6px;
+    max-height: 60px;
+    cursor: default;
+  }
+
+  &:hover .hover-border {
+    display: block;
+    border-color: #0886dd;
+    /*ie8*/
+    background-color: rgb(8, 134, 221);
+    background-color: rgba(8, 134, 221, 0.2);
+  }
+
+  &:focus .hover-border {
+    display: block;
+    border-color: #0886dd;
+    /*ie8*/
+    background-color: rgb(8, 134, 221);
+    background-color: rgba(8, 134, 221, 0.4);
+  }
+}
+
+ul.contextMenu {
+  position: absolute;
+  border: solid 1px #cccccc;
+  background-color: #eeeeee;
+  padding: 5px;
+  line-height: 24px;
+  -webkit-transition: all 150ms;
+  -moz-transition: all 150ms;
+  -ms-transition: all 150ms;
+  -o-transition: all 150ms;
+  transition: all 150ms;
+  cursor: default;
+  box-shadow: 1px 1px 2px #333333;
+  z-index: 999;
+}
+
+ul.contextMenu li {
+  position: relative;
+  padding: 0 5px;
+}
+
+ul.contextMenu li:hover .hover-border {
+  border-color: rgb(51, 156, 211);
+  display: block;
+  z-index: -1;
+  background-color: rgb(57, 183, 249);
+  background-color: rgba(51, 156, 211, 0.2);
+}

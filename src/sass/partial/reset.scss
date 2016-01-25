@@ -1,0 +1,84 @@
+body {
+  font: 14px "微软雅黑";
+  margin: 0 auto;
+  padding: 0;
+  color: #000;
+  overflow: hidden;
+  border: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-image: url(../image/bg1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+a {
+  color: #000;
+  text-decoration: none
+}
+
+table {
+  border: none;
+  border-spacing: 0;
+}
+
+a:hover {
+}
+
+ul, ol, p, dl {
+  margin: 0;
+  padding: 0
+}
+
+ul, ol, dl {
+  overflow: hidden
+}
+
+li {
+  list-style: none
+}
+
+img {
+  border: none;
+  border-style: none;
+}
+
+h1, h2, h3, h4 {
+  font: 12px Verdana;
+  margin: 0;
+  padding: 0
+}
+
+input {
+  font: 12px Verdana
+}
+
+
+.clear {
+  clear: both;
+}
+
+*:focus {
+  outline: none;
+}
+
+.hover-border {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border: 1px solid rgba(211, 211, 211, 0.80);
+  border-radius: 2px;
+  /*ie8*/
+  background-color: rgb(193, 193, 193);
+  background-color: rgba(255, 255, 255, 0.30);
+  z-index: -1;
+  display: none;
+}

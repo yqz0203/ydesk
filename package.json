@@ -1,0 +1,25 @@
+{
+  "name": "ydesk",
+  "version": "0.1.0",
+  "description": "a web user interface simulating windows desktop ",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "gulp-plumber": "^1.0.1",
+    "gulp-ruby-sass": "^2.0.6"
+  },
+  "scripts": {
+    "dev":"NODE_EVN=development gulp",
+    "prod":"NODE_EVN=product gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ui",
+    "windows",
+    "web"
+  ],
+  "author": "qizhang yang",
+  "license": "ISC"
+}

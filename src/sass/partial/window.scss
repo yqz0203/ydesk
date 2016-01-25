@@ -1,0 +1,148 @@
+
+
+.window {
+  position: absolute;
+  height: 500px;
+  width: 800px;
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  -ms-transition: all 200ms;
+  -o-transition: all 200ms;
+  transition: all 200ms;
+  background-color: #ffffff;
+  opacity: 0;
+  overflow: hidden;
+  border-radius: 4px 4px 0 0;
+
+  .win-header {
+    height: 30px;
+    line-height: 30px;
+    background-color: #dce1e2;
+    cursor: move;
+    font-family: "微软雅黑";
+    padding-left: 10px;
+    border: solid 1px #cccccc;
+    border-bottom: 0;
+  }
+
+  /*.window:focus .win-header{*/
+  /*background-color: #c2c6c7;*/
+  /*}*/
+
+  .window .un-focused {
+    background-color: #cdd1d2;
+  }
+
+  .win-content-frame {
+    border: solid 1px #cccccc;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    top: 30px;
+  }
+
+  .win-content {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    overflow: hidden;
+    /*margin: 5px 0 5px 5px;*/
+    margin: 0;
+  }
+
+  .win-content-body {
+    position: relative;
+    padding-right: 10px;
+    -webkit-transition: top 200ms;
+    -moz-transition: top 200ms;
+    -ms-transition: top 200ms;
+    -o-transition: top 200ms;
+    transition: top 200ms;
+  }
+
+  .no-select {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: 'none';
+  }
+
+  .no-transition {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+
+  .win-scrollbar {
+    top: 0px;
+    height: 30px;
+    position: absolute;
+    width: 5px;
+    background-color: #c6c6c6;
+    border-radius: 5px;
+    right: 3px;
+    -webkit-transition: top 200ms;
+    -moz-transition: top 200ms;
+    -ms-transition: top 200ms;
+    -o-transition: top 200ms;
+    transition: top 200ms;
+  }
+
+  .win-resize-point {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    bottom: 0px;
+    right: 0px;
+    opacity: 0;
+    cursor: se-resize;
+  }
+
+  .win-scrollbar-selected {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+    background-color: #aaaaaa;
+    width: 8px;
+    right: 1px;
+  }
+
+  .win-title-funcbutton {
+    float: right;
+    cursor: default;
+    width: 50px;
+    text-align: center;
+  }
+
+  .win-maximum:after {
+    content: url("max.png");
+  }
+
+  .win-normal:after {
+    content: url("normal.png");
+  }
+
+  .win-minimum:hover, .win-normal:hover, .win-maximum:hover {
+    background-color: #aaaaaa;
+  }
+
+  .win-minimum:after {
+    content: url("min.png");
+  }
+
+  .win-close:after {
+    content: url("close.png");
+    cursor: default;
+  }
+
+  .win-close:hover {
+    background-color: red;
+  }
+}

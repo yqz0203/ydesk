@@ -1,0 +1,169 @@
+<div id="calculator">
+    <table border="0" border-spacing="0">
+        <tr>
+            <td colspan="4" id="calculator-expression"></td>
+        </tr>
+        <tr>
+            <td colspan="4" id="calculator-value">0</td>
+        </tr>
+        <tr>
+            <td class="calculator-clearInput">CE</td>
+            <td class="calculator-clear">C</td>
+            <td class="calculator-backspace">←</td>
+            <td class="calculator-operator">÷</td>
+        </tr>
+        <tr>
+            <td class="calculator-number">7</td>
+            <td class="calculator-number">8</td>
+            <td class="calculator-number">9</td>
+            <td class="calculator-operator">×</td>
+        </tr>
+        <tr>
+            <td class="calculator-number">4</td>
+            <td class="calculator-number">5</td>
+            <td class="calculator-number">6</td>
+            <td class="calculator-operator">-</td>
+        </tr>
+        <tr>
+            <td class="calculator-number">1</td>
+            <td class="calculator-number">2</td>
+            <td class="calculator-number">3</td>
+            <td class="calculator-operator">+</td>
+        </tr>
+        <tr>
+            <td class="calculator-plus-minus">±</td>
+            <td class="calculator-number">0</td>
+            <td class="calculator-number">.</td>
+            <td class="calculator-getResult" style="background-color: #ff0000">=</td>
+        </tr>
+    </table>
+</div>
+<script>
+    var calculator = (function () {
+        var table = $('#calculator').children(0),
+                expression = $('#calculator-expression'),
+                result = $('#calculator-value');
+        result.click(function (e) {
+            e.stopPropagation();
+        });
+        var currentValue = 0,
+                operator = null,
+                preInputValue = '',
+                preInputType = ''; //0 数字 1操作符 2等号
+        table.on('click', 'td', function (e) {
+            var td = $(e.currentTarget);
+            //执行计算操作后，如果按下的不是操作符，则需要重置
+            if (preInputType == 3 && td.text() != '=') {
+                if (td.hasClass('calculator-operator'))
+                    expression.text(currentValue);
+                else
+                    reset();
+            }
+            if (td.hasClass('calculator-number')) {
+                var text = td.text();
+                if (preInputType == 1) {
+                    preInputValue = text;
+                    result.text('');
+                }
+                else {
+                    preInputValue += text;
+                }
+                preInputType = 0;
+                var rText = result.text();
+                if (text == '.') {
+                    if (rText.indexOf('.') >= 0)return;
+                }
+                else {
+                    if (rText == '0')rText = '';
+                }
+                result.text(rText + text);
+            }
+            else if (td.hasClass('calculator-operator')) {
+                var _operator = td.text();
+                var _expression = expression.text();
+                result.text(0);
+                //如果上次输入的是操作符
+                if (preInputType == 1) {
+                    _expression = _expression.substr(0, _expression.length - 1);
+                }
+                //如果上次输入的数字
+                else if (preInputType == 0) {
+                    _expression +=preInputValue * 1
+                    //如果有操作符
+                    if (operator) {
+                        currentValue = calResult();
+                        result.text(currentValue);
+                    }
+                    else {
+                        currentValue = preInputValue;
+                    }
+                }
+                expression.text(_expression + _operator);
+                preInputType = 1;
+                operator = _operator;
+            }
+            else if (td.hasClass('calculator-getResult')) {
+                //如果上次输入的是操作符
+                if (preInputType == 1) {
+                    preInputType = currentValue;
+                }
+                currentValue = calResult();
+                result.text(currentValue);
+                expression.text('');
+                preInputType = 3;
+            }
+            //重置
+            else if (td.hasClass('calculator-clear')) {
+                reset();
+            }
+            //删除输入
+            else if (td.hasClass('calculator-backspace')) {
+                var rText = result.text();
+                rText = rText.substr(0, rText.length - 1);
+                if (rText.length == 0) {
+                    rText = 0;
+                }
+                preInputValue = rText;
+                result.text(rText);
+            }
+            //清空输入
+            else if (td.hasClass('calculator-clearInput')) {
+                preInputValue = 0;
+                result.text(0);
+            }
+            //正负
+            else if (td.hasClass('calculator-plus-minus')) {
+                var rText = result.text();
+                if (preInputValue > 0) {
+                    rText = '-' + rText;
+                    preInputValue = -preInputValue;
+                }
+                result.text(rText);
+            }
+        });
+
+        function reset() {
+            currentValue = 0;
+            operator = null;
+            preInputValue = '';
+            preInputType = '';
+            expression.text('');
+            result.text(0);
+        }
+
+        function calResult() {
+            switch (operator) {
+                case '×':
+                    return 1 * currentValue * preInputValue;
+                    break;
+                case '+':
+                    return 1 * currentValue + 1 * preInputValue;
+                case '-':
+                    console.log(1);
+                    return 1 * currentValue - 1 * preInputValue;
+                case '÷':
+                    return 1 * currentValue / preInputValue;
+            }
+        }
+    })();
+</script>

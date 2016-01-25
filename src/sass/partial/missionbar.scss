@@ -1,0 +1,94 @@
+#mission-bar {
+  position: absolute;
+  height: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*ie8*/
+  background-color: rgb(10, 10, 10);
+  background-color: rgba(10, 10, 10, 0.90);
+  cursor: default;
+
+  .shadow:hover {
+    /*ie8*/
+    background-color: rgb(190, 190, 190);
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  #mission-bar-win {
+    position: absolute;
+    left: 0;
+    width: 60px;
+    top: 0;
+    bottom: 0;
+  }
+
+  #mission-bar-win img {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 18px;
+    top: 13px;
+  }
+
+  #mission-bar-buttons {
+    position: absolute;
+    left: 60px;
+    right: 100px;
+    margin-right: 20px;
+    top: 0;
+    bottom: 0;
+    color: #ffffff;
+    overflow: hidden;
+  }
+
+  #mission-bar-buttons .mission-bar-button {
+    position: absolute;
+    height: 30px;
+    line-height: 30px;
+    padding: 10px;
+    padding-left: 50px;
+    /*background-color: #dd7d55;*/
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-transition: all 150ms;
+    -moz-transition: all 150ms;
+    -ms-transition: all 150ms;
+    -o-transition: all 150ms;
+    transition: all 150ms;
+  }
+
+  #mission-bar-buttons .mission-active {
+    background-color: rgb(78, 141, 221);
+    background-color: rgba(78, 141, 221, 0.70);
+  }
+
+  #mission-bar-buttons .mission-active:hover {
+    background-color: rgb(78, 141, 221);
+  }
+
+  #mission-bar-buttons .mission-bar-button img {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    left: 10px;
+    top: 10px;
+  }
+}
+
+
+
+#mission-bar-datetime {
+  position: absolute;
+  width: 100px;
+  right: 0;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+}
+
+#mission-bar-datetime span {
+  display: block;
+  line-height: 25px;
+  height: 25px;
+}
